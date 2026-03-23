@@ -1,9 +1,7 @@
 ---
 title: "Literacy is a Privilege"
-date: 2026-03-23
 summary: "Two thirds of American nine and ten year olds cannot read proficiently — and those of us with the power to change that can't even feel the problem. It's time literacy was treated as a human right."
-author: "Chase Young"
-tags: ["literacy", "education", "equity"]
+category: "67abab032416c5c10e781fc5"
 ---
 
 It feels impossible to say something about the importance of reading that hasn't already been said, but at the same time it feels like the message hasn't gotten through. If we all take it for granted that literacy is a fundamental necessity for success in our society, why isn't this a huge national priority?

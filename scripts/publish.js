@@ -101,14 +101,17 @@ async function main() {
     const slug = slugify(frontmatter.title || path.basename(file, '.md'));
     const html = marked(content);
 
+    if (!frontmatter.category) {
+      console.error(`Skipping "${frontmatter.title}": missing required "category" field in frontmatter (must be a Webflow category item ID)`);
+      continue;
+    }
+
     const fieldData = {
       name: frontmatter.title,
       slug,
       'post-body': html,
       'post-summary': frontmatter.summary || '',
-      author: frontmatter.author || '',
-      date: frontmatter.date ? new Date(frontmatter.date).toISOString() : new Date().toISOString(),
-      tags: (frontmatter.tags || []).join(', '),
+      category: frontmatter.category,
     };
 
     const existing = existingBySlug[slug];
