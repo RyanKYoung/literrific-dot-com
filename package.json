@@ -1,64 +1,15 @@
-# LiTerrific Content
-
-Blog content for [literrific.com](https://www.literrific.com), managed in GitHub and auto-published to Webflow CMS.
-
-## Setup
-
-### 1. Get Webflow API credentials
-
-- Go to **Webflow Dashboard → Site Settings → Apps & Integrations**
-- Generate an **API token** with CMS read/write permissions
-- Go to **CMS → Blog Posts** collection and copy the **Collection ID** from the URL
-
-### 2. Add GitHub secrets
-
-In this repo: **Settings → Secrets and variables → Actions** → add:
-
-| Secret | Value |
-|--------|-------|
-| `WEBFLOW_API_TOKEN` | Your Webflow API token |
-| `WEBFLOW_COLLECTION_ID` | Your Blog Posts collection ID |
-
-### 3. Match field slugs
-
-Open `scripts/publish.js` and verify the field names match your Webflow collection:
-
-- `post-body` → your rich text field slug
-- `post-summary` → your summary field slug
-- `author` → your author field slug
-- `tags` → your tags field slug
-
-Find these in **Webflow CMS → Blog Posts → field settings**.
-
-### 4. Install & test locally (optional)
-
-```bash
-npm install
-WEBFLOW_API_TOKEN=your_token WEBFLOW_COLLECTION_ID=your_id node scripts/publish.js
-```
-
-## Writing posts
-
-Create a `.md` file in `/posts`:
-
-```markdown
 ---
-title: "Your Post Title"
+title: "Reading Wars: A Peace Treaty"
 date: 2025-04-02
-summary: "A short description."
-author: "Author Name"
-tags: ["tag1", "tag2"]
+summary: "A look at how the reading wars can find common ground through evidence-based practices."
+author: "Chase Young"
+tags: ["reading", "phonics", "fluency"]
 ---
 
-Post content in Markdown here.
-```
+Your blog post content goes here in regular Markdown.
 
-Push to `main` and the GitHub Action publishes it automatically.
+## Subheadings work
 
-## How it works
+So do **bold**, *italic*, [links](https://example.com), and everything else Markdown supports.
 
-1. Push a `.md` file to `/posts`
-2. GitHub Action runs `scripts/publish.js`
-3. Script parses frontmatter + converts Markdown → HTML
-4. Creates or updates the post in Webflow CMS (matched by slug)
-5. Post appears on literrific.com/blog
+The publish script converts this to HTML and pushes it to your Webflow CMS automatically.
