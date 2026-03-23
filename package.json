@@ -1,0 +1,13 @@
+{
+  "name": "literrific-dot-com",
+  "version": "1.0.0",
+  "description": "Blog publishing pipeline for literrific.com via Webflow CMS",
+  "private": true,
+  "scripts": {
+    "publish": "node scripts/publish.js"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^12.0.0"
+  }
+}
